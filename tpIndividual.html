@@ -1,4 +1,8 @@
 <style>
+  body {
+    margin: 0;
+    background: linear-gradient(180deg, #f4f6f8 0%, #eef1f5 100%);
+  }
   .viz-section {
     max-width: 800px;
     margin: 60px auto;
@@ -34,6 +38,7 @@
     padding: 20px;
     display: inline-block;
     max-width: 100%;
+    border: 1px solid #e8e8ec;
   }
   .viz-section .chart-wrapper img {
     max-width: 100%;
@@ -54,7 +59,40 @@
     width: 100%;
     border: none;
   }
+  .viz-section:not(:last-child) {
+    border-bottom: 1px solid #e2e5ea;
+    padding-bottom: 40px;
+  }
+  .page-header {
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .page-header .kicker {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0f8b8d;
+    font-weight: 600;
+  }
+  .page-header h1 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin: 8px 0 4px;
+  }
+  .page-header p {
+    color: #777;
+    font-size: 1rem;
+    margin: 0;
+  }
 </style>
+<div class="page-header">
+  <div class="kicker">Trabajo Práctico · Visualización de datos</div>
+  <h1>Mis desplazamientos, en tres preguntas</h1>
+  <p>10 días registrando cada viaje: de dónde salí, a dónde llegué, cómo y con quién.</p>
+</div>
 <section class="viz-section">
   <h2 class="chart-question">¿Qué caminos recorro una y otra vez?</h2>
   <p class="chart-context">
