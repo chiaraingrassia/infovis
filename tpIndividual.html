@@ -50,8 +50,11 @@
     width: 100%;
     min-height: 600px;
   }
+  .viz-section .chart-wrapper--full iframe {
+    width: 100%;
+    border: none;
+  }
 </style>
-
 <section class="viz-section">
   <h2 class="chart-question">¿Qué caminos recorro una y otra vez?</h2>
   <p class="chart-context">
@@ -63,7 +66,6 @@
     <object type="image/svg+xml" data="chordDist.svg"></object>
   </div>
 </section>
-
 <section class="viz-section">
   <h2 class="chart-question">¿Cambia el medio de transporte que elijo según si voy acompañada o no?</h2>
   <p class="chart-context">
@@ -81,5 +83,19 @@
         <img src="https://public.flourish.studio/visualisation/30127029/thumbnail" width="100%" alt="Gráfico de círculos anidados: medio de transporte según compañía" />
       </noscript>
     </div>
+  </div>
+</section>
+<section class="viz-section">
+  <h2 class="chart-question">¿Qué medio de transporte elijo según el motivo del viaje?</h2>
+  <p class="chart-context">
+    Este gráfico "Stacked Bars" agrupa mis 35 desplazamientos por motivo (trabajo,
+    ejercicio, compras, etc.) y muestra qué medio de transporte usé en cada uno. El
+    motivo predice casi perfectamente el medio: trabajo es subte en el 100% de los
+    casos, mientras que ejercicio, compras y merienda son siempre a pie. Los otros medios
+    sólo aparecen en motivos puntuales y no rutinarios —cumpleaños, atención médica, visitas—,
+    con la excepción de "cena", el único motivo donde combiné subte de ida y uber de vuelta.
+  </p>
+  <div class="chart-wrapper chart-wrapper--full">
+  <div style="min-height:282px" id="datawrapper-vis-UmLh3"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UmLh3/embed.js" charset="utf-8" data-target="#datawrapper-vis-UmLh3"></script><noscript><img src="https://datawrapper.dwcdn.net/UmLh3/full.png" alt="¿Qué medio de transporte elijo según el motivo del viaje? (Stacked Bars)" /></noscript></div>
   </div>
 </section>
