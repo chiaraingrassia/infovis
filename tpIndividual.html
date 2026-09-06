@@ -9,27 +9,23 @@
   body {
     background: linear-gradient(180deg, #fdf6f0 0%, #f6f3ec 35%, #f1f5f0 65%, #fbf1f0 100%);
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-    height: 100dvh;
   }
   .screen {
-    min-height: 100vh;
-    min-height: 100dvh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: clamp(16px, 4vw, 40px);
+    padding: clamp(24px, 4vw, 48px);
     text-align: center;
     position: relative;
-    overflow-y: auto;
   }
   .screen:not(:last-child) {
     border-bottom: 1px solid #ece3d8;
+  }
+  /* Solo la portada ocupa toda la primera pantalla */
+  .screen--title {
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   /* Portada */
@@ -64,70 +60,60 @@
     white-space: nowrap;
   }
 
-  /* Secciones de gráficos */
+  /* Secciones de gráficos: altura natural, prioridad al tamaño del gráfico */
   .viz-section {
     max-width: 1000px;
     width: 100%;
-    height: 100%;
-    min-height: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
   .chart-question {
-    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
     font-weight: 700;
     color: #3d5646;
-    margin: 0 0 6px;
+    margin: 0 0 8px;
     line-height: 1.25;
     max-width: 720px;
-    flex: 0 0 auto;
   }
   .chart-context {
-    font-size: clamp(0.8rem, 2vw, 0.88rem);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
     color: #443f38;
     max-width: 680px;
-    margin: 0 auto clamp(10px, 2vh, 14px);
-    line-height: 1.45;
-    flex: 0 0 auto;
+    margin: 0 auto 20px;
+    line-height: 1.5;
   }
   .chart-wrapper {
     background: #fffdfb;
     border-radius: 12px;
     box-shadow: 0 2px 14px rgba(180, 120, 100, 0.12);
-    padding: clamp(8px, 1.5vw, 14px);
+    padding: clamp(10px, 1.5vw, 18px);
     max-width: 100%;
     width: 100%;
     border: 1px solid #eee2d8;
-    flex: 1 1 auto;
-    min-height: 260px;
-    max-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: auto;
   }
   .chart-wrapper img,
   .chart-wrapper object {
     max-width: 100%;
-    max-height: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
   }
   .chart-wrapper.chart-wrapper--full {
     width: 100%;
+    height: 620px;
+    max-height: 80vh;
   }
   .chart-wrapper--full .flourish-embed {
     width: 100%;
     height: 100%;
-    min-height: 260px;
   }
   .chart-wrapper--full iframe {
     width: 100%;
     height: 100%;
-    min-height: 260px;
     border: none;
   }
 
@@ -140,26 +126,18 @@
   /* Ajustes para pantallas chicas (celular, ventanas angostas) */
   @media (max-width: 640px) {
     .screen {
-      padding: 18px 14px 28px;
+      padding: 18px 14px 32px;
     }
     .chart-context {
       max-width: 100%;
     }
-    .chart-wrapper {
-      min-height: 220px;
-      max-height: 50vh;
+    .chart-wrapper.chart-wrapper--full {
+      height: 420px;
     }
     .scroll-hint {
       position: static;
       margin-top: 20px;
     }
-  }
-
-  /* Pantallas bajas (poca altura, ej. notebook con zoom o landscape en celular) */
-  @media (max-height: 600px) {
-    .chart-question { margin-bottom: 4px; }
-    .chart-context { margin-bottom: 8px; }
-    .chart-wrapper { min-height: 180px; max-height: 60vh; }
   }
 </style>
 
@@ -241,7 +219,7 @@
       puede filtrar e interactuar directamente con los datos.
     </p>
     <div class="chart-wrapper chart-wrapper--full">
-      <div class='tableauPlaceholder' id='viz1788715717496' style='position: relative; width:100%; height:100%; min-width: 260px; min-height: 260px;'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='miVidEnMov&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>
+      <div class='tableauPlaceholder' id='viz1788715717496' style='position: relative; width:100%; height:100%;'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='miVidEnMov&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>
       <script type='text/javascript'>
         (function () {
           var divElement = document.getElementById('viz1788715717496');
