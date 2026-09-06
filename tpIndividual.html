@@ -1,4 +1,7 @@
 <style>
+  * {
+    box-sizing: border-box;
+  }
   html, body {
     margin: 0;
     height: 100%;
@@ -9,18 +12,21 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
+    height: 100dvh;
   }
   .screen {
-    height: 100vh;
-    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100dvh;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 24px 20px;
+    padding: clamp(16px, 4vw, 40px);
     text-align: center;
     position: relative;
+    overflow-y: auto;
   }
   .screen:not(:last-child) {
     border-bottom: 1px solid #ece3d8;
@@ -28,33 +34,34 @@
 
   /* Portada */
   .screen--title .kicker {
-    font-size: 0.85rem;
+    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #c96f5c;
     font-weight: 600;
   }
   .screen--title h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5.5vw, 2.8rem);
     color: #5c3038;
     margin: 14px 0 20px;
     max-width: 700px;
   }
   .screen--title p {
     color: #443f38;
-    font-size: 1.05rem;
+    font-size: clamp(0.9rem, 2.2vw, 1.05rem);
     margin: 0;
     max-width: 600px;
     line-height: 1.7;
   }
   .scroll-hint {
     position: absolute;
-    bottom: 32px;
+    bottom: clamp(12px, 3vh, 32px);
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.85rem;
     color: #8c7c68;
     letter-spacing: 0.05em;
+    white-space: nowrap;
   }
 
   /* Secciones de gráficos */
@@ -62,13 +69,14 @@
     max-width: 1000px;
     width: 100%;
     height: 100%;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   .chart-question {
-    font-size: 1.5rem;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
     font-weight: 700;
     color: #3d5646;
     margin: 0 0 6px;
@@ -77,10 +85,10 @@
     flex: 0 0 auto;
   }
   .chart-context {
-    font-size: 0.88rem;
+    font-size: clamp(0.8rem, 2vw, 0.88rem);
     color: #443f38;
     max-width: 680px;
-    margin: 0 auto 14px;
+    margin: 0 auto clamp(10px, 2vh, 14px);
     line-height: 1.45;
     flex: 0 0 auto;
   }
@@ -88,16 +96,17 @@
     background: #fffdfb;
     border-radius: 12px;
     box-shadow: 0 2px 14px rgba(180, 120, 100, 0.12);
-    padding: 14px;
+    padding: clamp(8px, 1.5vw, 14px);
     max-width: 100%;
-    box-sizing: border-box;
+    width: 100%;
     border: 1px solid #eee2d8;
     flex: 1 1 auto;
-    min-height: 0;
+    min-height: 260px;
+    max-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
   }
   .chart-wrapper img,
   .chart-wrapper object {
@@ -113,10 +122,12 @@
   .chart-wrapper--full .flourish-embed {
     width: 100%;
     height: 100%;
+    min-height: 260px;
   }
   .chart-wrapper--full iframe {
     width: 100%;
     height: 100%;
+    min-height: 260px;
     border: none;
   }
 
@@ -125,6 +136,31 @@
   .screen:nth-of-type(3) .chart-question { color: #4f6e5c; }
   .screen:nth-of-type(4) .chart-question { color: #954a58; }
   .screen:nth-of-type(5) .chart-question { color: #a2661e; }
+
+  /* Ajustes para pantallas chicas (celular, ventanas angostas) */
+  @media (max-width: 640px) {
+    .screen {
+      padding: 18px 14px 28px;
+    }
+    .chart-context {
+      max-width: 100%;
+    }
+    .chart-wrapper {
+      min-height: 220px;
+      max-height: 50vh;
+    }
+    .scroll-hint {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+
+  /* Pantallas bajas (poca altura, ej. notebook con zoom o landscape en celular) */
+  @media (max-height: 600px) {
+    .chart-question { margin-bottom: 4px; }
+    .chart-context { margin-bottom: 8px; }
+    .chart-wrapper { min-height: 180px; max-height: 60vh; }
+  }
 </style>
 
 <div class="screen screen--title">
