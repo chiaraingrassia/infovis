@@ -106,14 +106,18 @@
     width: 100%;
     height: 620px;
     max-height: 80vh;
+    overflow: hidden;
   }
   .chart-wrapper--full .flourish-embed {
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
+  .chart-wrapper--full .flourish-embed iframe,
   .chart-wrapper--full iframe {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
     border: none;
   }
 
