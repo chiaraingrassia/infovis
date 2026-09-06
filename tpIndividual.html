@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 24px 20px;
     text-align: center;
     position: relative;
   }
@@ -36,12 +36,12 @@
   }
   .screen--title h1 {
     font-size: 2.8rem;
-    color: #7a4a52;
+    color: #5c3038;
     margin: 14px 0 20px;
     max-width: 700px;
   }
   .screen--title p {
-    color: #6b6459;
+    color: #443f38;
     font-size: 1.05rem;
     margin: 0;
     max-width: 600px;
@@ -53,71 +53,78 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.85rem;
-    color: #a99b8a;
+    color: #8c7c68;
     letter-spacing: 0.05em;
   }
 
   /* Secciones de gráficos */
   .viz-section {
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
   }
   .chart-question {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #4f6e5c;
-    margin: 0 0 10px;
-    line-height: 1.3;
-    max-width: 680px;
+    color: #3d5646;
+    margin: 0 0 6px;
+    line-height: 1.25;
+    max-width: 720px;
+    flex: 0 0 auto;
   }
   .chart-context {
-    font-size: 0.95rem;
-    color: #6b6459;
-    max-width: 560px;
-    margin: 0 auto 20px;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    color: #443f38;
+    max-width: 680px;
+    margin: 0 auto 14px;
+    line-height: 1.45;
+    flex: 0 0 auto;
   }
   .chart-wrapper {
     background: #fffdfb;
     border-radius: 12px;
     box-shadow: 0 2px 14px rgba(180, 120, 100, 0.12);
-    padding: 16px;
-    display: inline-block;
+    padding: 14px;
     max-width: 100%;
-    max-height: 55vh;
-    overflow: auto;
+    box-sizing: border-box;
     border: 1px solid #eee2d8;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
-  .chart-wrapper img {
+  .chart-wrapper img,
+  .chart-wrapper object {
     max-width: 100%;
+    max-height: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
   }
   .chart-wrapper.chart-wrapper--full {
-    display: block;
     width: 100%;
-    box-sizing: border-box;
   }
   .chart-wrapper--full .flourish-embed {
     width: 100%;
-    min-height: 420px;
+    height: 100%;
   }
   .chart-wrapper--full iframe {
     width: 100%;
+    height: 100%;
     border: none;
   }
 
   /* Acentos de color por sección, sutiles y alternados en la paleta naranja/verde/rosa */
-  .screen:nth-of-type(2) .chart-question { color: #c96f5c; }
-  .screen:nth-of-type(3) .chart-question { color: #7d9471; }
-  .screen:nth-of-type(4) .chart-question { color: #b56b7a; }
-  .screen:nth-of-type(5) .chart-question { color: #c98a4a; }
+  .screen:nth-of-type(2) .chart-question { color: #a8503e; }
+  .screen:nth-of-type(3) .chart-question { color: #4f6e5c; }
+  .screen:nth-of-type(4) .chart-question { color: #954a58; }
+  .screen:nth-of-type(5) .chart-question { color: #a2661e; }
 </style>
 
 <div class="screen screen--title">
@@ -182,7 +189,7 @@
       con la excepción de "cena", el único motivo donde combiné subte de ida y uber de vuelta.
     </p>
     <div class="chart-wrapper chart-wrapper--full">
-      <div style="min-height:280px" id="datawrapper-vis-UmLh3"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UmLh3/embed.js" charset="utf-8" data-target="#datawrapper-vis-UmLh3"></script><noscript><img src="https://datawrapper.dwcdn.net/UmLh3/full.png" alt="¿Qué medio de transporte elijo según el motivo del viaje? (Stacked Bars)" /></noscript></div>
+      <div style="width:100%; height:100%" id="datawrapper-vis-UmLh3"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UmLh3/embed.js" charset="utf-8" data-target="#datawrapper-vis-UmLh3"></script><noscript><img src="https://datawrapper.dwcdn.net/UmLh3/full.png" alt="¿Qué medio de transporte elijo según el motivo del viaje? (Stacked Bars)" /></noscript></div>
     </div>
   </section>
 </div>
@@ -198,7 +205,7 @@
       puede filtrar e interactuar directamente con los datos.
     </p>
     <div class="chart-wrapper chart-wrapper--full">
-      <div class='tableauPlaceholder' id='viz1788715717496' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='miVidEnMov&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1788715717496');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='900px';vizElement.style.height='500px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='900px';vizElement.style.height='500px';} else { vizElement.style.width='100%';vizElement.style.height='400px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <div class='tableauPlaceholder' id='viz1788715717496' style='position: relative; width:100%; height:100%'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='miVidEnMov&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1788715717496');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='100%';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height='100%';} else { vizElement.style.width='100%';vizElement.style.height='100%';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
     </div>
   </section>
 </div>
