@@ -149,12 +149,8 @@
   <div class="kicker">Trabajo Práctico · Visualización de datos</div>
   <h1>Mi vida en movimiento</h1>
   <p>
-    Durante 10 días registré cada uno de mis desplazamientos: de dónde salí, a dónde
-    llegué, con qué medio de transporte, por qué motivo y si iba sola o acompañada.
-    En total fueron 35 viajes que, mirados de conjunto, cuentan bastante sobre cómo
-    se organiza mi semana: qué rutinas se repiten sin pensar, qué decisiones tomo
-    según con quién voy, y qué se escapa de lo habitual. Las siguientes cuatro
-    visualizaciones exploran esos patrones desde ángulos distintos.
+    Durante 10 días registré cada uno de mis desplazamientos para entender mejor cómo me muevo en mi día a día. Para cada viaje anoté el origen, el destino, el motivo, el medio de transporte, la distancia recorrida, el costo y si iba sola o acompañada.
+En total registré 35 movimientos, que permiten observar algunas de mis rutinas más frecuentes y también aquellos viajes que aparecen de manera más puntual. A través de las visualizaciones busco descubrir qué recorridos repito, cómo cambia mi elección de transporte según la situación y qué motivos están más asociados a cada forma de moverme.
   </p>
   <div class="scroll-hint">Scrolleá para ver los gráficos ↓</div>
 </div>
@@ -163,9 +159,8 @@
   <section class="viz-section">
     <h2 class="chart-question">¿Qué caminos recorro una y otra vez?</h2>
     <p class="chart-context">
-      Registré cada uno de mis traslados durante 10 días: de dónde salí, a dónde llegué
-      y con qué medio de transporte. Este diagrama conecta origen y destino de cada
-      viaje: cuanto más gruesa la cinta, más veces recorrí ese camino.
+      A lo largo de los 35 movimientos aparecen algunos recorridos que forman parte de mi rutina y que se repiten varias veces, como los viajes entre mi casa y la oficina, el gimnasio o el supermercado.
+Este diagrama conecta cada origen con su destino. Cuanto más gruesa es la conexión, más veces se repite ese recorrido. De esta manera, se puede ver rápidamente cuáles son los caminos que más forman parte de mi día a día y cuáles aparecen solamente de manera ocasional.
     </p>
     <div class="chart-wrapper">
       <object type="image/svg+xml" data="chordDist.svg"></object>
@@ -177,12 +172,9 @@
   <section class="viz-section">
     <h2 class="chart-question">¿Cambia el medio de transporte que elijo según si voy acompañada o no?</h2>
     <p class="chart-context">
-      Este gráfico de círculos anidados agrupa mis 35 desplazamientos de la semana en dos
-      grupos —sin compañía y con compañía— y dentro de cada uno, por medio de transporte
-      usado. El tamaño de cada círculo representa la cantidad de veces que usé ese medio
-      en cada situación. Cuando me muevo sola recurro a una variedad más amplia de medios
-      (caminando, subte, uber y colectivo), mientras que acompañada el repertorio se
-      reduce casi exclusivamente a caminar y, en menor medida, uber.
+      De los 35 movimientos registrados, 29 los hice sola y 6 acompañada. Pero la diferencia no está solamente en la cantidad: también cambia el tipo de transporte que utilizo.
+Este gráfico de círculos anidados agrupa los movimientos según si estaba sola o acompañada y, dentro de cada grupo, según el medio de transporte utilizado.
+Cuando me muevo sola utilizo los cuatro medios registrados: caminando, subte, Uber y colectivo. En cambio, cuando estoy acompañada, mis movimientos se concentran principalmente en caminar y Uber.
     </p>
     <div class="chart-wrapper chart-wrapper--full">
       <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30127029">
@@ -199,12 +191,9 @@
   <section class="viz-section">
     <h2 class="chart-question">¿Qué medio de transporte elijo según el motivo del viaje?</h2>
     <p class="chart-context">
-      Este gráfico "Stacked Bars" agrupa mis 35 desplazamientos por motivo (trabajo,
-      ejercicio, compras, etc.) y muestra qué medio de transporte usé en cada uno. El
-      motivo predice casi perfectamente el medio: trabajo es subte en el 100% de los
-      casos, mientras que ejercicio, compras y merienda son siempre a pie. Los otros medios
-      sólo aparecen en motivos puntuales y no rutinarios —cumpleaños, atención médica, visitas—,
-      con la excepción de "cena", el único motivo donde combiné subte de ida y uber de vuelta.
+      No todos mis viajes requieren la misma forma de transporte. Al cruzar el motivo del movimiento con el medio utilizado aparecen patrones muy claros.
+Este gráfico de barras apiladas muestra qué transporte utilicé para cada motivo. Algunas actividades tienen una relación muy marcada con un único medio: todos mis viajes por trabajo fueron en subte y todos los relacionados con ejercicio, compras, desayuno y merienda fueron caminando.
+Los medios motorizados aparecen principalmente en situaciones puntuales, como cumpleaños, visitas, atención médica o algunos regresos. El caso de la cena es particular, ya que combiné subte para ir y Uber para volver.
     </p>
     <div class="chart-wrapper chart-wrapper--full">
       <div style="width:100%; height:100%" id="datawrapper-vis-UmLh3"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UmLh3/embed.js" charset="utf-8" data-target="#datawrapper-vis-UmLh3"></script><noscript><img src="https://datawrapper.dwcdn.net/UmLh3/full.png" alt="¿Qué medio de transporte elijo según el motivo del viaje? (Stacked Bars)" /></noscript></div>
@@ -216,11 +205,9 @@
   <section class="viz-section">
     <h2 class="chart-question">¿Qué tan rutinaria es mi semana y qué medio de transporte concentra mis viajes?</h2>
     <p class="chart-context">
-      Por último, armé un dashboard interactivo en Tableau que cruza dos miradas más
-      sobre estos mismos 35 desplazamientos: cuánto de mi semana es rutina y cuánto es
-      puntual según el motivo del viaje, y qué medio de transporte concentra la mayor
-      parte de mis traslados en total. A diferencia de los gráficos anteriores, acá se
-      puede filtrar e interactuar directamente con los datos.
+      Después de registrar mis movimientos durante 10 días, aparecen dos tipos de desplazamientos: aquellos que se repiten como parte de mi rutina y aquellos que responden a situaciones puntuales.
+En este dashboard exploro los movimientos desde dos perspectivas: los motivos que generan mis desplazamientos y los medios de transporte que utilizo con mayor frecuencia.
+En total, caminar es el medio que más aparece en mis registros, con 18 movimientos, seguido por el subte con 10, Uber con 5 y colectivo con 2.
     </p>
     <div class="chart-wrapper chart-wrapper--full">
       <div class='tableauPlaceholder' id='viz1788715717496' style='position: relative; width:100%; height:100%;'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='miVidEnMov&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;mi&#47;miVidEnMov&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>
