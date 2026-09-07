@@ -60,97 +60,66 @@
     white-space: nowrap;
   }
 
-  /* Secciones de gráficos */
-.viz-section {
-  max-width: 1000px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.chart-question {
-  font-size: clamp(1.15rem, 3vw, 1.6rem);
-  font-weight: 700;
-  color: #3d5646;
-  margin: 0 0 8px;
-  line-height: 1.25;
-  max-width: 720px;
-}
-
-.chart-context {
-  font-size: clamp(0.85rem, 2vw, 0.95rem);
-  color: #443f38;
-  max-width: 680px;
-  margin: 0 auto 16px;
-  line-height: 1.5;
-}
-
-.chart-wrapper {
-  background: #fffdfb;
-  border-radius: 12px;
-  box-shadow: 0 2px 14px rgba(180, 120, 100, 0.12);
-  padding: clamp(8px, 1.2vw, 14px);
-  max-width: 100%;
-  width: 100%;
-  border: 1px solid #eee2d8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Gráficos grandes: se adaptan al tamaño de la pantalla */
-.chart-wrapper.chart-wrapper--full {
-  width: 100%;
-  height: min(620px, 60vh);
-  min-height: 400px;
-  overflow: hidden;
-}
-
-.chart-wrapper--full .flourish-embed {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.chart-wrapper--full .flourish-embed iframe,
-.chart-wrapper--full iframe {
-  width: 100% !important;
-  height: 100% !important;
-  max-height: 100% !important;
-  border: none;
-}
-
-/* Gráfico 2 - Flourish */
-.screen:nth-of-type(3) .chart-wrapper--full {
-  height: min(620px, 58vh);
-}
-
-/* Gráfico 4 - Tableau */
-.screen:nth-of-type(5) .chart-wrapper--full {
-  height: min(620px, 58vh);
-}
-
-/* Ajustes para pantallas chicas */
-@media (max-width: 640px) {
-  .screen {
-    padding: 18px 14px 28px;
+  /* Secciones de gráficos: altura natural, prioridad al tamaño del gráfico */
+  .viz-section {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
+  .chart-question {
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: #3d5646;
+    margin: 0 0 8px;
+    line-height: 1.25;
+    max-width: 720px;
+  }
   .chart-context {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    color: #443f38;
+    max-width: 680px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+  }
+  .chart-wrapper {
+    background: #fffdfb;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(180, 120, 100, 0.12);
+    padding: clamp(10px, 1.5vw, 18px);
     max-width: 100%;
+    width: 100%;
+    border: 1px solid #eee2d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
+  .chart-wrapper img,
+  .chart-wrapper object {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
   .chart-wrapper.chart-wrapper--full {
-    height: 55vh;
-    min-height: 350px;
+    width: 100%;
+    height: 620px;
+    max-height: 80vh;
+    overflow: hidden;
   }
-
-  .scroll-hint {
-    position: static;
-    margin-top: 20px;
+  .chart-wrapper--full .flourish-embed {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
-}
+  .chart-wrapper--full .flourish-embed iframe,
+  .chart-wrapper--full iframe {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    border: none;
+  }
 
   /* Acentos de color por sección, sutiles y alternados en la paleta naranja/verde/rosa */
   .screen:nth-of-type(2) .chart-question { color: #a8503e; }
